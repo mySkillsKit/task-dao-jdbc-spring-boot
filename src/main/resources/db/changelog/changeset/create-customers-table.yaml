@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-customers #текстовый идентификатор (Обязателен)
+      author: Anatolii Vasilev # автор (Обязателен)
+      changes:
+        - createTable: # создаем новую таблицу
+            tableName: customers
+            columns: # объявления колонок
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(128)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: surname
+                  type: varchar(128)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: age
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: phone_number
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
